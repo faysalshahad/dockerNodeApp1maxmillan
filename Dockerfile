@@ -5,19 +5,21 @@ FROM node
 # Set working directory inside container
 WORKDIR /nodeApp1
 
-# Copy your application code
-COPY . /nodeApp1
-
 # Copy package.json and package-lock.json
-#COPY package*.json ./
+COPY package.json /nodeApp1
+#COPY package*.json ./nodeApp1
 
 # Install dependencies inside container
 RUN npm install
+
+# Copy your application code
+COPY . /nodeApp1
 
 # Expose port (change if needed)
 # Post Number 80 has been defined in our server.js file. 
 #So we need to expose port 80 in our Dockerfile.    
 EXPOSE 80 
+#EXPOSE 3000 
 
 # Start your application
 #CMD ["npm", "start"]
