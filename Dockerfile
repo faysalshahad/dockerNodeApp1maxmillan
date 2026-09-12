@@ -22,4 +22,4 @@ COPY . /pythonApp1
 # Start your application
 #CMD ["npm", "start"]
 #CMD ["node", "server.js"]
-CMD ['python', 'rng.py']
+CMD ["python", "rng.py"]
